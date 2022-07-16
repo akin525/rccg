@@ -176,7 +176,7 @@
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up">
                             <div class="member-img">
-                                <img src="{{asset('storage/minister').'/'.$ns->picture}}" class="img-fluid" alt="">
+                                <img src="rccg/storage/app/public/minister{{$ns->picture}}" class="img-fluid" alt="">
                                 <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
