@@ -173,7 +173,7 @@
             {{--                <h3 class="text-center">Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>--}}
             <div class="row">
                 @foreach($mini as $ns)
-                    {{asset('storage/app/public/minister/'.$ns->picture)}}
+                    {{asset('rccg/storage/app/public/minister/'.$ns->picture)}}
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up">
                             <div class="member-img">
