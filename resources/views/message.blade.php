@@ -49,7 +49,7 @@
                         <h4><a href="#">RCCG CHRIST</a></h4>
                         <p><a href="#">UPLOAD OF CHURCH GALLERY</a></p>
                         <p>Our services uploading church gallery.</p>
-                        <button type="#" class="btn btn-success mt-2">VIEW NOW</button>
+                        <button type="{{route('gallery')}}" class="btn btn-success mt-2">VIEW NOW</button>
                     </div>
                 </div>
 
