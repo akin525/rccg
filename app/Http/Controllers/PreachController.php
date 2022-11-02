@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Console\helper;
+use App\Models\Minister;
+use App\Models\Sermon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +13,9 @@ class PreachController
 {
     public function index()
     {
-        return view("preach");
+        $min=Minister::all();
+        $mes=Sermon::all();
+        return view("admin/add-message", compact('min', 'mes'));
     }
 
     public function pre(Request $request)

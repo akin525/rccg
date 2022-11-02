@@ -1,4 +1,5 @@
-@include('layouts.sidebar')
+@extends('admin.layout.sidebar')
+@section('content')
 <div class="row">
     <div class="col-xl-12 col-xxl-12">
         <div class="card">
@@ -65,3 +66,4 @@
             <script src="{{asset('user/vendor/summernote/js/summernote.min.js')}}"></script>
 
             <script src="{{asset('user/js/plugins-init/summernote-init.js')}}"></script>
+@endsection

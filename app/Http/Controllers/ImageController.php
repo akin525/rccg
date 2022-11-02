@@ -18,9 +18,10 @@ public function index()
 }
     public static  function upload(Request $request)
     {
-        $re = helper::upload('img/', 'png', $request->file('logo'));
-        $re1 = helper::upload('img/', 'png', $request->file('logo1'));
-        $re2 = helper::upload('img/', 'png', $request->file('logo2'));
+
+        $re =  Storage::put('gallery', $request['logo']);
+        $re1 = Storage::put('gallery', $request['logo1']);
+        $re2 = Storage::put('gallery', $request['logo2']);
 
         $rel=$request->name;
         $rel1=$request->name1;
@@ -40,7 +41,7 @@ public function index()
     }
     public function gal()
     {
-        $gallery= DB::table('gallerys')->where('status', '=', '1')->paginate(6);
+        $gallery= DB::table('gallerys')->where('status', '=', '1')->get();
 //        return $gallery;
         return view('gallery', compact('gallery'));
     }

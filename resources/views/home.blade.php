@@ -1,284 +1,597 @@
-@include('layouts.header')
+@extends("layouts.header")
 
-<section id="hero" class="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+@section('content')
 
-        <div class="carousel-inner" role="listbox">
+    <!-- ***** Main Banner Area Start ***** -->
+    <section class="section main-banner" id="top" data-section="section1">
+        <video autoplay muted loop id="bg-video">
+            <source src="images/back.mp4" type="video/mp4" />
+        </video>
 
-            <!-- Slide 1 -->
-            <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg);">
-                <div class="carousel-container">
-                    <div class="carousel-content animate__animated animate__fadeInUp">
-                        <h1 ><a href="#" >
-                                <img src="{{asset('assets/img/1200px-Rccg_logo.png')}}" height="50" width="50"><span><strong>CHRIST CHAPEL</strong></span></a></h1>
-                        <h3>EVERYBODY'S WELCOME.</h3>
-                        <h3>NOBODY'S PERFECT.</h3>
-                        <h3>ANYTHING'S POSSIBLE.</h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg);">
-                <div class="carousel-container">
-                    <div class="carousel-content animate__animated animate__fadeInUp">
-                        <h1 ><a href="#" >
-                                <img src="{{asset('assets/img/1200px-Rccg_logo.png')}}" height="50" width="50"><span><strong>CHRIST CHAPEL</strong></span></a></h1>
-                        <h3>LISTEN TO.</h3>
-                        <h3>GOD WORD's.</h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
-                <div class="carousel-container">
-                    <div class="carousel-content animate__animated animate__fadeInUp">
-                        <h1 ><a href="#" >
-                                <img src="{{asset('assets/img/1200px-Rccg_logo.png')}}" height="50" width="50"><span><strong>CHRIST CHAPEL</strong></span></a></h1>
-                        <h3>GOD IS OUR.</h3>
-                        <h3>STRENGTH.</h3>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-    </div>
-</section>
-<main id="main">
-
-    <!-- ======= About Us Section ======= -->
-
-    <!-- ======= About Us Section ======= -->
-{{--    <section id="about-us" class="about-us">--}}
-{{--        <div class="container" data-aos="fade-up">--}}
-
-{{--            <div class="row content">--}}
-{{--                <div class="col-lg-6" data-aos="fade-right">--}}
-{{--                    <h2>Eum ipsam laborum deleniti velitena</h2>--}}
-{{--                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">--}}
-{{--                    <p>--}}
-{{--                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate--}}
-{{--                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in--}}
-{{--                        culpa qui officia deserunt mollit anim id est laborum--}}
-{{--                    </p>--}}
-{{--                    <ul>--}}
-{{--                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>--}}
-{{--                        <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>--}}
-{{--                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>--}}
-{{--                    </ul>--}}
-{{--                    <p class="fst-italic">--}}
-{{--                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore--}}
-{{--                        magna aliqua.--}}
-{{--                    </p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--        </div>--}}
-{{--    </section><!-- End About Us Section -->--}}
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="team section-bg">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Word Of God</h2>
-            </div>
-{{--                <h3 class="text-center">Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>--}}
-            <div class="row">
-                @foreach($pe as $news)
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member" data-aos="fade-up">
-                        <div class="member-img">
-                            <img src="{{asset('storage/preach').'/'.$news->picture}}" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
+        <div class="video-overlay header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="caption">
+                            <br>
+                            <br>
+                            <h6>HELLO PEOPLE OF PRAISE</h6>
+                            <h2>Welcome to Rccg Christ Chapel</h2>
+                            <h6>ABOUT GOD: Ps. 33:6-9</h6>
+                            <p>As revealed unto us by the Bible, we believe that there is only one God, Who is the Creator of both visible and invisible creatures -Gen. 1:1; Ps. 86:9-10; Is. 43:10-11; John 1:1-3. Only God will be in existence forever. Ez. 3:14; in God every creature receives life -John 5:26.</p>
+                            <div class="main-button-red">
+                                <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
                             </div>
                         </div>
-                        <div class="member-info">
-                            <h4>Topic: {{$news->topic}}</h4>
-                            <span>By: {{$news->preacher}}</span>
-                            <button type="button" onclick="window.location='{{route('read-more',$news->id)}}'" class="btn btn-outline-success">Read-More</button>
-                        </div>
                     </div>
                 </div>
-                @endforeach
-
-{{--                <br>--}}
-{{--                <br>--}}
-{{--                <div class="card">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="alert alert-success">--}}
-{{--                            <i class="mdi mdi-account"></i>--}}
-{{--                    <h4 class=" text-center"> Welcome to RCCG Christ Chapel Church! Our vision is to lead our generation into a transforming relationship with Jesus, and authentic community with each other, so that everyone in the Bay Area and beyond can flourish.</h4>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
-        </div>
-        <center>
-        <button type="button" onclick="window.location='{{route('sermon')}}'" class="btn btn-outline-success">View More Sermon</button>
-        </center>
-    </section><!-- End Services Section -->
-
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Gallery</h2>
-                </div>
-            </div>
-
-            <div class="row portfolio-container" data-aos="fade-up">
-                @foreach($pam as $dap)
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="{{asset('storage/img').'/'.$dap->path}}" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>{{$dap->name}}</h4>
-                            <p>RCCG</p>
-                            <a href="{{asset('storage/img').'/'.$dap->path}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{$dap->name}}"><i class="bx bx-plus"></i></a>
-                            <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <center>
-            <button type="button" onclick="window.location='{{route('gallery')}}'" class="btn btn-outline-success">View All Gallery</button>
-            </center>
-
         </div>
     </section>
-    <section id="teams" class="team section-bg">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Ministers Of God</h2>
-            </div>
-            {{--                <h3 class="text-center">Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>--}}
+    <!-- ***** Main Banner Area End ***** -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="services">
+        <div class="container">
             <div class="row">
-                @foreach($mini as $ns)
-                    {{asset('rccg/storage/app/public/minister/'.$ns->picture)}}
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up">
-                            <div class="member-img">
-                                <img src="{{asset('rccg/storage/app/public/minister/'.$ns->picture)}}" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                <div class="col-lg-12">
+                    <div class="owl-service-item owl-carousel">
+                        @foreach($slide as $s)
+                        <div class="item">
+                            <div class="icon">
+                                <img src="images/service-icon-01.png" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>{{$s['head']}}</h4>
+                                <p>{{$s['body']}}</p>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="upcoming-meetings" id="meetings">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Messages</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="categories">
+                        <h4>Programs</h4>
+                        <ul style="list-style-type:square">
+                            <li><a href="#">Sunday School</a></li>
+                            <li><a href="#">Sunday Service </a></li>
+                            <li><a href="#">Bible Study</a></li>
+                            <li><a href="#">Faith Clinic</a></li>
+                            <li><a href="#">Holy Ghost Party With Christ</a></li>
+                        </ul>
+                        <div class="main-button-red">
+                            <a href="#">All Gallary</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        @foreach($pe as $sa)
+                        <div class="col-lg-6">
+                            <div class="meeting-item">
+                                <div class="thumb">
+                                    <div class="price">
+                                        <span>   </span>
+                                    </div>
+                                    <a href="#"><img src="{{url('/', $sa->picture)}}" alt="New Lecturer Meeting"></a>
+                                </div>
+                                <div class="down-content">
+                                    <div class="date">
+                                        <h6>{{$sa->date}}</h6>
+                                    </div>
+                                    <a href="#"><h4>{{$sa->topic}}</h4></a>
+                                    <a href="#"><h4>By:{{$sa->preacher}}</h4></a>
+                                   <button type="button" class="btn btn-outline-success">Read more</button>
                                 </div>
                             </div>
-                            <div class="member-info">
-                                <h4>{{$ns->name}}</h4>
-{{--                                <button type="button" onclick="window.location='{{route('read-more',$news->id)}}'" class="btn btn-outline-success">Read-More</button>--}}
-                            </div>
                         </div>
+                        @endforeach
                     </div>
-                @endforeach
-
-                {{--                <br>--}}
-                {{--                <br>--}}
-                {{--                <div class="card">--}}
-                {{--                    <div class="card-body">--}}
-                {{--                        <div class="alert alert-success">--}}
-                {{--                            <i class="mdi mdi-account"></i>--}}
-                {{--                    <h4 class=" text-center"> Welcome to RCCG Christ Chapel Church! Our vision is to lead our generation into a transforming relationship with Jesus, and authentic community with each other, so that everyone in the Bay Area and beyond can flourish.</h4>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
+                </div>
             </div>
-        </div>
-    </section><!-- End Services Section -->
+    </section>
 
-
-    <section id="contact" class="contact">
+    <section class="apply-now" id="apply">
         <div class="container">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Contact-Us</h2>
-                </div>
-            </div>
-
-            <div class="row justify-content-center" data-aos="fade-up">
-
-                <div class="col-lg-10">
-
-                    <div class="info-wrap">
-                        <div class="row">
-                            <div class="col-lg-4 info">
-                                <i class="bi bi-geo-alt"></i>
-                                <h4>Location:</h4>
-                                <p>A108 Adam Street<br>New York, NY 535022</p>
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="item">
+                                <h3>PAYMENT OF FIRST FRUIT: <h3>Secret of Overwhelming blessing</h3> </h3>
+                                <p>The Bible is replete with virtually inexhaustible provisions for Man’s comfort here on earth and in eternity. The oldest singular limitation is Man’s refusal to simply obey the WORD of GOD. 3 John 2 for instance reaffirmed God’s persistent intention and plan for man: Beloved, I wish above all things that thou mayest prosper and be in health, even as thy soul prosperity. However, God not wanting to appear to man as a Dictator, grants man the freewill to enjoy virtually endless benefits ONLY on the condition of total obedience, to the giver of these benefits -The Almighty GOD.</p>
+                                <div class="main-button-red">
+                                    <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+                                </div>
                             </div>
-
-                            <div class="col-lg-4 info mt-4 mt-lg-0">
-                                <i class="bi bi-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>info@example.com<br>contact@example.com</p>
-                            </div>
-
-                            <div class="col-lg-4 info mt-4 mt-lg-0">
-                                <i class="bi bi-phone"></i>
-                                <h4>Call:</h4>
-                                <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="item">
+                                <h3>ABOUT GOD: <p>Ps. 33:6-9</p> </h3>
+                                <p>As revealed unto us by the Bible, we believe that there is only one God, Who is the Creator of both visible and invisible creatures -Gen. 1:1; Ps. 86:9-10; Is. 43:10-11; John 1:1-3. Only God will be in existence forever. Ez. 3:14; in God every creature receives life -John 5:26.</p>
+                                <div class="main-button-yellow">
+                                    <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-            </div>
-
-            <div class="row mt-5 justify-content-center" data-aos="fade-up">
-                <div class="col-lg-10">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                <div class="col-lg-6">
+                    <div class="accordions is-first-expanded">
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>REPENTANCE UNTO GOD</span>
+                                <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
                             </div>
-                            <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>Repentance is the sorrow of a godly man for his sins with decision to abstain from them – Acts 3:19; 20:21; II Cor. 7:10; Mark 1:15; Is. 55:7; II Chron. 7:14; Ezek. 18:21. </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                        </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
-                    </form>
+                        </article>
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>About RCF ILA-ORANGUN</span>
+                                <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>The fellowship, The Redeemed Christian Fellowship (RCF) people of praise started in the year 1988 on 21st of May and registered in the school that is the Osun State College of Education, Ila Orangun ( formerly Oyo State College of Education) on 20th June, 1990.
+                                        Then at comprised of 9 executives of the students in the institution. As at that time fellowship is still in main church of The Redeemed Christian Church of God, Victory Parish.
+                                        Bro. Tanimonu Kunle then became the president in the year 1994/95 session with total number of 28 people, later 6 of them were sent forth same year. They came up with the vision of moving the fellowship to have their personal Sunday service, however the main church then stood against it and also place a pastor on them then in RCCG, Victory Parish Opadina. After that they still move on to Igbonnibi Town Hall and then to cooperative and so on. With all these the population got increased to 85 and he (Bro.Tanimonu) left the leadership position with over 100people.
+                                        After that another set come up with getting a land for the fellowship in the year getting a land for the fellowship in the year 2003, within January and February, that time they were in unique Nursery and Primary School in which they only held Sunday Service and the weekly service somewhere else. That Very Sunday they were sent out from the place, they move to the new land bought, pray on it and start working on it by making Bamboo for the construction at that time the person that led the team was Bro. Gabriel (Drama Coordinator) and sis. Kemi Adeyoye (Sister Coordinator) without any instrument.
+                                        The Bamboo house begin to transformed to this great house in the year 2005 with the foundation by house in the year 2005 with zonal pastor. And the work is going gradually until what we see today.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>THE CHURCH OF GOD</span>
+                                <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>The born-again souls are called the Church of God – Eph. 1:22; Col. 1:1-18; Eph 3:10; 5:24-29. The assembly of the believers, the sanctified souls in Christ Jesus, Those who we call the Holy people of God – I Cor. 1:2; Acts 14:23; Phil. 4:15; Acts 13:28. Therefore all that God has called to gather together in a place and fed with the Word of God – Acts 2:41-47; They accept Christ as the head of the Church. They gather from time to time to worship God in truth and Spirit to share the bread and eat. Their major assignment is to spread the Gospel of Christ to all Nations – Matt. 28:19.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion last-accordion">
+                            <div class="accordion-head">
+                                <span>THE SECOND COMING OF CHRIST</span>
+                                <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>The Second coming of Jesus Christ will be in physical form and will be visible to all in like manner as He was seen ascending up to heavens – Acts 1:9-11; John 14:3. His return will be in two stages: A. Christ’s return in the sky – The Saints or Bride of Christ will be raptured to meet Christ in the sky – I Thess. 4:15-17; I Cor. 15:51-52; Matt. 24:40-44; Matt 25:10 B. His return to the earth – He will return to the earth to judge the sinners and the ungodly – Rev. 19:19-21; II Thess. 1:7-10; Jude 1:14-15; Zech. 14:3-4.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-
             </div>
-
         </div>
-    </section><!-- End Contact Section -->
+    </section>
+
+    <section class="our-courses" id="courses">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>DEPARTMENT IN RCF</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="owl-courses-item owl-carousel">
+                        <div class="item">
+                            <img src="images/course-01.jpg" alt="Course One">
+                            <div class="down-content">
+                                <h4>Prayer unit member</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-02.jpg" alt="Course Two">
+                            <div class="down-content">
+                                <h4>Bible study unit member </h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-03.jpg" alt="">
+                            <div class="down-content">
+                                <h4>Ushering unit member</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-04.jpg" alt="">
+                            <div class="down-content">
+                                <h4>Media unit member</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-01.jpg" alt="">
+                            <div class="down-content">
+                                <h4>organzing unit member</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-02.jpg" alt="">
+                            <div class="down-content">
+                                <h4>Protocol Unit member</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-03.jpg" alt="">
+                            <div class="down-content">
+                                <h4>Evangelism unit member</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-04.jpg" alt="">
+                            <div class="down-content">
+                                <h4>Choir unit Member </h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-01.jpg" alt="">
+                            <div class="down-content">
+                                <h4>Drama unit member </h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-02.jpg" alt="">
+                            <div class="down-content">
+                                <h4>Welfare unit member</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-03.jpg" alt="">
+                            <div class="down-content">
+                                <h4>Publicity unit member</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/course-04.jpg" alt="">
+                            <div class="down-content">
+                                <h4>Fellow-up unit member</h4>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2>A Few Facts About RCF ILA-ORANGUN</h2>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="count-area-content percentage">
+                                        <div class="count-digit">90</div>
+                                        <div class="count-title">Succesed Programs</div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="count-area-content">
+                                        <div class="count-digit">43</div>
+                                        <div class="count-title">Current workers</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="count-area-content new-students">
+                                        <div class="count-digit">150</div>
+                                        <div class="count-title">Members</div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="count-area-content">
+                                        <div class="count-digit">10</div>
+                                        <div class="count-title">Awards</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-center">
+                    <div class="video">
+                        <a href="https://www.facebook.com/rcf.ilaorangun/videos/2764936793801027" target="_blank"><img src="images/play-icon.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-us" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 align-self-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form id="contact" action="" method="post">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h2>Let's get in touch</h2>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <fieldset>
+                                            <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <fieldset>
+                                            <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <fieldset>
+                                            <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <textarea name="message" type="text" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="right-info">
+                        <ul>
+                            <li>
+                                <h6>Phone Number</h6>
+                                <span>08143054462</span>
+                            </li>
+                            <li>
+                                <h6>Email Address</h6>
+                                <span>rcfila@gmail.com</span>
+                            </li>
+                            <li>
+                                <h6>Street Address</h6>
+                                <span>No1,Counselor Abiodun Area, ila-orangun </span>
+                            </li>
+                            <li>
+                                <h6>Website URL</h6>
+                                <span>www.rcfila.com.ng</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
 
-</main><!-- End #main -->
+
 @include('layouts.footer')
+@endsection

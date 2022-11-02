@@ -1,96 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
+
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="RCF ILA">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>The Redeem Christain Church Of God | Christ Capel</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>RCF Christ Chapel</title>
 
-    <!-- Favicons -->
-    <link href="{{asset('assets/img/1200px-Rccg_logo.png')}}" rel="icon">
-    <link href="{{asset('assets/img/1200px-Rccg_logo.png')}}" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="{{asset('assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-{{--    <link rel="stylesheet" href="{{asset('hp/bootstrap.min.css')}}" />--}}
-{{--    <link rel="stylesheet" href="{{asset('hp/main.css')}}" />--}}
-    <!-- =======================================================
-    * Template Name: Company - v4.7.0
-    * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/rcfila.css">
+    <link rel="stylesheet" href="css/owl.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <!--
+
+    RCF ILA-orangun
+
+
+
 </head>
-<body class="authentication">
-<!-- Loading wrapper start -->
-{{--<div id="loading-wrapper">--}}
-{{--    <div class="spinner-border"></div>--}}
-{{--    RCCG CHRIST CAPEL--}}
-{{--</div>--}}
-{{--<!-- Loading wrapper end -->--}}
 
-<!-- ======= Header ======= -->
-<header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+<body>
 
-        <h5 ><a href="{{url('home')}}" >
-                <img src="{{asset('assets/img/1200px-Rccg_logo.png')}}" height="50" width="50"><span>CHRIST CHAPEL</span></a></h5>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-        <nav id="navbar" class="navbar order-last order-lg-0">
-            <ul>
-                <li><a href="{{url('home')}}" class="active">Home</a></li>
-                </li>
-
-                <li><a href="{{url('services')}}">SERVICES</a></li>
-                <li><a href="{{url('message')}}">MESSAGE</a></li>
-                <li><a href="{{route('gallery')}}">GALLERY</a></li>
-                <li><a href="{{route('sermon')}}">OUR-SERMON</a></li>
-                <li><a href="{{route('sermon')}}">WEEKLY SERVICES</a></li>
-                <li><a href="{{route('ministers')}}">MINISTERS</a></li>
-
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-
-        <div class="header-social-links d-flex">
-            <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
+<!-- Sub Header -->
+<div class="sub-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-8">
+                <div class="left-content">
+                    <p>This is <em>Christ Chapel</em>  website.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4">
+                <div class="right-icons">
+                    <ul>
+                        <li><a href="https://facebook.com/rcf.ilaorangun"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
     </div>
-</header><!-- End Header -->
+</div>
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
 
 
 
+                    <a href="{{route('home')}}" class="logo">
+                        <img src="{{asset('assets/img/1200px-Rccg_logo.png')}}" alt="rcf" style="width:70px;height:60px;">
+                        <span>CHRIST CHAPEL</span>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{{url('home')}}">Home</a></li>
+                        <li><a href="{{url('gallery')}}">Gallery</a></li>
+                        <li class="has-sub">
+                            <a href="javascript:void(0)">Message</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Audio Message</a></li>
+                                <li><a href="{{route('ser')}}">Sermon</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{url('contact')}}">Contact Us</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
+    @yield('content')
 
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+</div>
+@yield('scripts')
 
+<!-- Bootstrap core JavaScript -->
+<script src="{{asset('jquery/jquery.min.js')}}"></script>
+<script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
+<script src="{{asset('js/isotope.min.js')}}"></script>
+<script src="{{asset('js/owl-carousel.js')}}"></script>
+<script src="{{asset('js/lightbox.js')}}"></script>
+<script src="{{asset('js/tabs.js')}}"></script>
+<script src="{{asset('js/video.js')}}"></script>
+<script src="{{asset('js/slick-slider.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
+<script>
+    //according to loftblog tut
+    $('.nav li:first').addClass('active');
 
+    var showSection = function showSection(section, isAnimate) {
+        var
+            direction = section.replace(/#/, ''),
+            reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+            reqSectionPos = reqSection.offset().top - 0;
 
+        if (isAnimate) {
+            $('body, html').animate({
+                    scrollTop: reqSectionPos },
+                800);
+        } else {
+            $('body, html').scrollTop(reqSectionPos);
+        }
 
+    };
 
+    var checkSection = function checkSection() {
+        $('.section').each(function () {
+            var
+                $this = $(this),
+                topEdge = $this.offset().top - 80,
+                bottomEdge = topEdge + $this.height(),
+                wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+                var
+                    currentId = $this.data('section'),
+                    reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                reqLink.closest('li').addClass('active').
+                siblings().removeClass('active');
+            }
+        });
+    };
 
+    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+        e.preventDefault();
+        showSection($(this).attr('href'), true);
+    });
 
+    $(window).scroll(function () {
+        checkSection();
+    });
+</script>
+</body>

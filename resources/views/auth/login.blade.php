@@ -1,48 +1,69 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
 
-        <x-jet-validation-errors class="mb-4" />
+<!doctype html><html lang="en">
+<!-- Mirrored from bootstrap.gallery/cliq/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Sep 2022 17:10:22 GMT -->
+<head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Bootstrap 5 Dashboard Template">
+    <meta name="author" content="ParkerThemes">
+    <link rel="shortcut icon" href="{{asset('assets/img/1200px-Rccg_logo.png')}}">
+    <title>RCCG CHRIST CHAPEL - Admin Dashboard</title>
+    <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/fonts/icomoon/icomoon.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/css/main.css')}}">
+</head>
+<body class="login-container">
+<div id="loading-wrapper">
+    <div class="spinner-border"></div>
+    <div class="loading-messsage">
+        <span>R</span>
+        <span>C</span>
+        <span>C</span>
+        <span>G</span>
+        {{--        <span>i</span>--}}
+        {{--        <span>n</span>--}}
+        {{--        <span>g</span>--}}
+    </div>
+</div>
+<div class="container">
+    @include('sweetalert::alert')
+    <form method="post" action="{{ route('login') }}">
+        @csrf
+        <div class="login-box">
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+            <x-jet-validation-errors class="mb-4" />
+
+            @if (session('status'))
+                <div class="mb-4 font-medium text-sm text-green-600">
+                    {{ session('status') }}
+                </div>
+            @endif
+            <div class="login-blocks-img"></div>
+            <div class="login-form">
+                <a href="{{route('administrator')}}" class="">
+                    <img width="100" src="{{asset('assets/img/1200px-Rccg_logo.png')}}" />
+                </a>
+                <div class="login-welcome">RCCG CHRIST CHAPEL ADMIN</div>
+                <div class="login-form-block" >
+                    <label class="login-form-label" style="background-color: #0b0e23">Email</label>
+                    <input type="email" name="email"  class="login-form-control text-success"  required>
+                </div>
+                <div class="login-form-block">
+                    <label class="login-form-label" style="background-color: #0b0e23">Password</label>
+                    <input type="password" name="password" class="login-form-control text-white" required>
+                </div>
+                <div class="login-form-actions">
+                    {{--                    <a href="forgot-password.html" class="btn-link">Forgot password?</a>--}}
+                    <button type="submit" class="btn"><span class="icon">
+                        <i class="icon-login"></i>
+                    </span>Login</button>
+                </div>
             </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </div>
+    </form>
+</div>
+<script src="{{asset('admin/js/jquery.min.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
+</body>
+<!-- Mirrored from bootstrap.gallery/cliq/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Sep 2022 17:10:27 GMT -->
+</html>

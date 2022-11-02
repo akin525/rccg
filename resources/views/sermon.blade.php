@@ -1,116 +1,110 @@
-@include('layouts.header')
-<br>
-<section id="breadcrumbs" class="breadcrumbs">
-    <div class="container">
+@extends("layouts.header")
 
-        <div class="d-flex justify-content-between align-items-center">
-            <h2>Blog</h2>
-            <ol>
-                <li><a href="index.html">Home</a></li>
-                <li>Blog</li>
-            </ol>
-        </div>
-
-    </div>
-</section><!-- End Breadcrumbs -->
-<section id="blog" class="blog">
-    <div class="container" data-aos="fade-up">
-
-        <div class="row">
-            <div class="col-lg-8 entries">
-                @foreach($pe as $dap)
-                <article class="entry">
-
-                    <div class="entry-img">
-                        <img src="{{asset('storage/preach').'/'.$dap->picture}}" alt="" class="img-fluid">
+@section('content')
+    <section class="heading-page header-text" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Sermons</h2>
+                    <div class="main-button-red">
+                        <div class="scroll-to-section"><a href="#contact">Here are some pictures</a></div>
                     </div>
+                </div>
+            </div>
 
-                    <h2 class="entry-title">
-                        <a href="#">{{$dap->topic}}</a>
-                    </h2>
-
-                    <div class="entry-meta">
-                        <ul>
-                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{$dap->preacher}}</a></li>
-                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time datetime="{{$dap->date}}">{{$dap->date}}</time></a></li>
-                            <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#">12 Comments</a></li>
+    </section>
+    <section class="upcoming-meetings" id="meetings">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Messages</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="categories">
+                        <h4>Programs</h4>
+                        <ul style="list-style-type:square">
+                            <li><a href="#">Sunday School</a></li>
+                            <li><a href="#">Sunday Service </a></li>
+                            <li><a href="#">Bible Study</a></li>
+                            <li><a href="#">Faith Clinic</a></li>
+                            <li><a href="#">Holy Ghost Party With Christ</a></li>
                         </ul>
-                    </div>
-
-                    <div class="entry-content">
-                        <p>
-
-                           </p>
-                        <div class="read-more">
-                            <a href="{{route('read-more',$dap->id)}}">Read More</a>
+                        <div class="main-button-red">
+                            <a href="#">All Gallary</a>
                         </div>
                     </div>
-
-                </article><!-- End blog entry -->
-                    @endforeach
-                    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-                    <!-- Scripts -->
-                    <script src="{{ mix('js/app.js') }}" defer></script>
-                {{$pe->links()}}
-                    <div class="blog-pagination">
-                        <ul class="justify-content-center">
-
-                        </ul>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        @foreach($pe as $sa)
+                            <div class="col-lg-6">
+                                <div class="meeting-item">
+                                    <div class="thumb">
+                                        <div class="price">
+                                            <span>   </span>
+                                        </div>
+                                        <a href="#"><img src="{{url('/', $sa->picture)}}" alt="New Lecturer Meeting"></a>
+                                    </div>
+                                    <div class="down-content">
+                                        <div class="date">
+                                            <h6>{{$sa->date}}</h6>
+                                        </div>
+                                        <a href="#"><h4>{{$sa->topic}}</h4></a>
+                                        <a href="#"><h4>By:{{$sa->preacher}}</h4></a>
+                                        <button type="button" class="btn btn-outline-success">Read more</button>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-
+                </div>
             </div>
-            <div class="col-lg-4">
-
-                <div class="sidebar">
-
-                    <h3 class="sidebar-title">Search</h3>
-                    <div class="sidebar-item search-form">
-                        <form action="">
-                            <input type="text">
-                            <button type="submit"><i class="bi bi-search"></i></button>
-                        </form>
-                    </div><!-- End sidebar search formn-->
-
-                    <h3 class="sidebar-title">Recent Posts</h3>
-                    @foreach($v as $da)
-
-                    <div class="sidebar-item recent-posts">
-                        <div class="post-item clearfix">
-                            <img src="{{asset('storage/preach').'/'.$da->picture}}" alt="">
-                            <h4><a href="{{route('read-more',$da->id)}}">{{$da->topic}}</a></h4>
-                            <time datetime="2020-01-01">{{$da->date}}</time>
+    </section>
+    <section class="our-courses" id="courses">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>Recent Sermon</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="owl-courses-item owl-carousel">
+                        @foreach($v as $ve)
+                        <div class="item">
+                            <img src="{{url('/', $ve->picture)}}" alt="Course One">
+                            <div class="down-content">
+                                <h4>Topic: {{$ve->topic}}</h4>
+                                <center>
+                                <button type="button" class="btn btn-outline-success">Read More</button>
+                                </center>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <span>   </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         @endforeach
-
-
-                    </div><!-- End sidebar recent posts-->
-
-                    <h3 class="sidebar-title">Tags</h3>
-                    <div class="sidebar-item tags">
-                        <ul>
-                            <li><a href="#">App</a></li>
-                            <li><a href="#">IT</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Mac</a></li>
-                            <li><a href="#">Design</a></li>
-                            <li><a href="#">Office</a></li>
-                            <li><a href="#">Creative</a></li>
-                            <li><a href="#">Studio</a></li>
-                            <li><a href="#">Smart</a></li>
-                            <li><a href="#">Tips</a></li>
-                            <li><a href="#">Marketing</a></li>
-                        </ul>
-                    </div><!-- End sidebar tags-->
-
-                </div><!-- End sidebar -->
-
-            </div><!-- End blog sidebar -->
-
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-</section>
 
-@include('layouts.footer')
+@endsection
 
