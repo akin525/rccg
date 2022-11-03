@@ -59,45 +59,45 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 
 });
-//Route::get('/gallery/{filename}', function ($filename) {
-//    $path = storage_path('app/gallery/' . $filename);
-//
-//    if (!File::exists($path)) {
-//        abort(404);
-//    }
-//    $file = File::get($path);
-//    $type = File::mimeType($path);
-//
-//    $response = Response::make($file, 200);
-//    $response->header("Content-Type", $type);
-//    return $response;
-//})->name('gallery');
-//Route::get('/sermon/{filename}', function ($filename) {
-//    $path = storage_path('app/sermon/' . $filename);
-//
-//    if (!File::exists($path)) {
-//        abort(404);
-//    }
-//    $file = File::get($path);
-//    $type = File::mimeType($path);
-//
-//    $response = Response::make($file, 200);
-//    $response->header("Content-Type", $type);
-//    return $response;
-//})->name('sermon');
-//Route::get('/minister/{filename}', function ($filename) {
-//    $path = storage_path('app/minister/' . $filename);
-//
-//    if (!File::exists($path)) {
-//        abort(404);
-//    }
-//    $file = File::get($path);
-//    $type = File::mimeType($path);
-//
-//    $response = Response::make($file, 200);
-//    $response->header("Content-Type", $type);
-//    return $response;
-//})->name('minister');
+Route::get('/gallery/{filename}', function ($filename) {
+    $path = storage_path('app/gallery/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+})->name('gallery');
+Route::get('/sermon/{filename}', function ($filename) {
+    $path = storage_path('app/sermon/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+})->name('sermon');
+Route::get('/minister/{filename}', function ($filename) {
+    $path = storage_path('app/minister/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+})->name('minister');
 Route::get('/logout', function(){
     Auth::logout();
     Alert::Success('Logout', 'You Have Successful Logout');
