@@ -103,3 +103,4 @@ Route::get('/logout', function(){
     Alert::Success('Logout', 'You Have Successful Logout');
     return view('admin.login')->with('success', 'Logout Successful');
 });
+require __DIR__.'/auth.php';
